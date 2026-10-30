@@ -1,0 +1,111 @@
+{
+  "@@locale": "en",
+  "preparingPause": "Preparing your pause.",
+  "setupTitle": "Set up Focum",
+  "setupDescription": "We just need a few permissions to help you use your phone with intention.",
+  "focumReady": "Focum is ready",
+  "focumInactive": "Focum is not active yet",
+  "reviewPermissions": "Review permissions or activate it whenever you like.",
+  "enablePermissions": "Allow the required permissions, then activate Focum.",
+  "activateFocum": "Activate Focum",
+  "deactivateFocum": "Deactivate Focum",
+  "privacyNotice": "Privacy: we store the date, time, category and final text. Audio is processed by your device’s speech recognition service.",
+  "focumActive": "Focum is active",
+  "activeDescription": "Focum will help you each time you unlock your phone.",
+  "allSet": "All set",
+  "permissionsGranted": "The main permissions have been granted.",
+  "deactivate": "Deactivate",
+  "chooseBeforeEntering": "Choose your main reason before continuing.",
+  "listening": "I’m listening",
+  "intentionQuestion": "What are you going to use your phone for now?",
+  "voiceIdleHint": "Tap and say your reason",
+  "voiceRetryHint": "Please repeat, I didn’t catch that",
+  "monitoringStopped": "Focum deactivated.",
+  "overlayRequired": "Allow Focum to appear when you unlock your phone before activating it.",
+  "monitoringStarted": "Focum is active. It will be with you every time you unlock.",
+  "microphoneRequired": "Enable the microphone to use voice input.",
+  "speechUnavailable": "Speech recognition is not available on this device.",
+  "chooseCategoryOrSpeak": "Choose a category or say your reason.",
+  "intentionSaved": "Intention saved.",
+  "requiredPermission": "Required",
+  "optionalPermission": "Optional",
+  "allowPermission": "Allow",
+  "openSettings": "Open settings",
+  "grantedPermission": "Granted",
+  "overlayPermissionTitle": "Show when unlocking",
+  "overlayPermissionDescription": "Required for Focum to appear as soon as you unlock.",
+  "notificationPermissionTitle": "Visible service",
+  "notificationPermissionDescription": "Shows that Focum is active.",
+  "microphonePermissionTitle": "Use your voice",
+  "microphonePermissionDescription": "Say your intention in a short sentence.",
+  "usagePermissionTitle": "See the app in use",
+  "usagePermissionDescription": "Lets Focum remind you if the open app doesn’t match your intention.",
+  "batteryPermissionTitle": "Background activity",
+  "batteryPermissionDescription": "Optional. Helps prevent Android from automatically stopping Focum.",
+  "manualMode": "Manual",
+  "voiceMode": "Voice",
+  "chooseMainReason": "Choose your main reason.",
+  "tapAnIcon": "Tap an icon",
+  "orUseMicrophone": "or use the microphone",
+  "savedInstantly": "Saved instantly",
+  "categoryLearning": "Learning",
+  "categoryWork": "Work",
+  "categoryPersonalGrowth": "Personal growth",
+  "categorySocial": "Social",
+  "categoryHealth": "Health",
+  "categoryTravel": "Travel",
+  "categoryPersonal": "Personal",
+  "categoryOther": "Other",
+  "focusMismatchTitle": "Stay focused.",
+  "focusMismatchMessage": "You said you would use your phone for {reason}, but now you’re in {app}.",
+  "@focusMismatchMessage": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "app": {
+        "type": "String"
+      }
+    }
+  },
+  "returnToIntention": "Return to my intention",
+  "fiveMinutesTitle": "It’s been 5 minutes.",
+  "keepGoing": "I’m still on it",
+  "reminderPhone": "You’ve been using your phone for 5 minutes for {reason}.",
+  "@reminderPhone": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderApp": "You’ve spent 5 minutes in {app} for {reason}.",
+  "@reminderApp": {
+    "placeholders": {
+      "app": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderIntention": "You’ve been using your phone for 5 minutes. You said it was for {reason}.",
+  "@reminderIntention": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "reopenFocum": "Reopen Focum",
+  "activationReminder": "Android may have paused Focum. Open the app and activate Focum again.",
+  "statusChannelName": "Focum status",
+  "statusChannelDescription": "Daily reminders to reopen Focum if Android stops it.",
+  "remindersChannelName": "Focum reminders",
+  "remindersChannelDescription": "Reminders for saved unlock intentions.",
+  "monitorChannelName": "Focum monitor",
+  "monitorChannelDescription": "Keeps Focum’s unlock monitor active.",
+  "monitorNotification": "Focum will ask your intention when you unlock.",
+  "sayBeforeEntering": "Say it in a short sentence before continuing."
+}
