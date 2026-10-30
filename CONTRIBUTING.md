@@ -55,7 +55,7 @@ Los cambios en `master` deben pasar por una pull request y recibir al menos una 
 
 La decisión de aceptar y fusionar corresponde al propietario o a otro administrador autorizado. Los comentarios y revisiones de la comunidad son bienvenidos, pero no sustituyen la aprobación obligatoria del responsable. Si se añaden cambios después de una aprobación, esta se invalida y hace falta una nueva revisión. Las conversaciones de revisión deben resolverse antes de fusionar.
 
-GitHub no permite que el autor apruebe su propia pull request. Por tanto, una PR del propietario necesita la aprobación de otro responsable autorizado. No se prevén excepciones para saltarse las reglas, ni pushes directos, force pushes o borrados de `master`.
+GitHub no permite que el autor apruebe su propia pull request. Para permitir el mantenimiento cuando solo hay un administrador, los administradores tienen una excepción limitada a la fusión mediante pull request: pueden fusionar sus propias PR sin una segunda aprobación. Esta opción también les permite omitir los demás requisitos del conjunto de reglas al fusionar una PR, por lo que deben revisar los cambios, las comprobaciones y las conversaciones antes de usarla. Los colaboradores sin permisos de administrador siguen sujetos a la revisión obligatoria. La excepción no permite pushes directos, force pushes ni borrados de `master`.
 
 Las reglas de GitHub aplican los requisitos de revisión; este documento y CODEOWNERS por sí solos no sustituyen la configuración del repositorio. GitHub utiliza el CODEOWNERS de la rama de destino, por lo que los nuevos responsables entran en vigor cuando ese archivo se incorpora a `master`.
 
