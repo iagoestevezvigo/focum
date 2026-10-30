@@ -6,6 +6,8 @@ Focum es un MVP en Flutter para Android que introduce una pausa consciente justo
 
 El proyecto se distribuye bajo la [licencia Apache 2.0](LICENSE).
 
+Para colaborar, consulta [CONTRIBUTING.md](CONTRIBUTING.md). Envía tus cambios mediante una pull request: su incorporación requiere revisión y aprobación del propietario o de otro administrador autorizado como responsable del código.
+
 Para preparar una copia local, instala Flutter estable y las herramientas de Android y ejecuta:
 
 ```sh
