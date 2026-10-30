@@ -23,7 +23,7 @@ Las compilaciones de desarrollo no requieren la clave privada del mantenedor. Pa
 
 Consulta la [Política de privacidad de Focum](PRIVACY.md), que describe el almacenamiento local, el acceso de uso, el dictado, las conexiones de tipografías y la eliminación de datos.
 
-Antes de publicarla, completar el responsable y el correo de contacto indicados en el documento. Para Google Play, alojar la política en una URL pública accesible e incluir también su enlace o texto dentro de la aplicación. Requisitos de referencia: [Datos de usuario de Google Play](https://support.google.com/googleplay/android-developer/answer/10144311?hl=es).
+La política incluye el responsable y contacto y está disponible sin conexión desde «Privacidad y datos» dentro de la aplicación. Para Google Play, utilizar su URL pública y revisar las declaraciones de la versión que se publique. Requisitos de referencia: [Datos de usuario de Google Play](https://support.google.com/googleplay/android-developer/answer/10144311?hl=es).
 
 ## Flujo del MVP
 
@@ -85,7 +85,7 @@ Cada intencion se guarda en `SharedPreferences` como JSON con:
 - El MVP no intercepta el desbloqueo a nivel de sistema como si fuera la pantalla de bloqueo del launcher o del SO.
 - La estrategia implementada depende de un `foreground service` activo, del broadcast `ACTION_USER_PRESENT` y del permiso de superposicion.
 - Algunos fabricantes pueden limitar la fiabilidad si aplican politicas agresivas de bateria o cierran servicios en segundo plano.
-- La entrada por voz usa el reconocimiento disponible en el dispositivo; no se envia audio a un backend propio de Focum.
+- La entrada por voz usa exclusivamente el reconocedor local de Android 12 o posterior; si no está disponible o falta el modelo del idioma, se utilizan las categorías manuales. No hay alternativa de dictado en la nube.
 - Para una publicacion en Google Play hay que revisar con cuidado el uso de `SYSTEM_ALERT_WINDOW` y del `foreground service` segun la politica vigente.
 
 ## Verificacion local
@@ -160,3 +160,7 @@ Al crear la version iOS se deben declarar `en`, `es`, `fr`, `de`, `it` y `pt` en
 adaptar las funciones de Android (superposicion y deteccion de desbloqueos) a las
 capacidades disponibles en iOS. La compilacion y firma para App Store requieren
 el entorno de Apple.
+
+## Revisión de Familias y publicación
+
+Consulta [la revisión de Familias](docs/FAMILIES_REVIEW.md) antes de publicar. Los cambios de privacidad necesitan una nueva compilación; fusionar esta PR no actualiza el bundle ya subido a Play Console.

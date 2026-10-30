@@ -40,7 +40,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get privacyNotice =>
-      'Privacidade: guardamos a data, hora, categoria e texto final. O áudio é processado pelo serviço de reconhecimento de voz do dispositivo.';
+      'Privacidade: as intenções ficam neste dispositivo. A voz é apenas local. O acesso à utilização de aplicações é opcional. Lê a política abaixo.';
 
   @override
   String get focumActive => 'Focum ativo';
@@ -92,7 +92,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get speechUnavailable =>
-      'O reconhecimento de voz não está disponível neste dispositivo.';
+      'O ditado local está indisponível. Escolhe uma categoria manualmente.';
 
   @override
   String get chooseCategoryOrSpeak =>
@@ -259,4 +259,36 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get sayBeforeEntering => 'Diz numa frase curta antes de continuar.';
+
+  @override
+  String get privacyTitle => 'Privacidade e dados';
+
+  @override
+  String get consentAccept => 'Aceitar';
+
+  @override
+  String get consentDecline => 'Agora não';
+
+  @override
+  String get microphoneDisclosure =>
+      'O Focum usa o microfone apenas durante o ditado. O áudio é processado neste dispositivo, nunca na nuvem. O texto final, a categoria e a hora ficam guardados localmente (até 300 entradas) e podem aparecer em lembretes. A voz requer Android 12 ou posterior e um modelo local instalado. Podes escolher uma categoria sem microfone. Aceitas?';
+
+  @override
+  String get usageDisclosure =>
+      'Enquanto o Focum está ativo, incluindo em segundo plano, lê eventos recentes de utilização para identificar a aplicação em primeiro plano e compará-la com a tua intenção nos lembretes. Os dados ficam no dispositivo: o Focum não guarda o histórico de aplicações nem o envia para um servidor. O acesso é opcional e pode ser revogado nas definições do Android. Aceitas?';
+
+  @override
+  String get deleteData => 'Apagar dados locais';
+
+  @override
+  String get deleteDataMessage =>
+      'Isto para o Focum, apaga intenções, lembretes, definições e consentimentos e fecha a aplicação. Não pode ser anulado.';
+
+  @override
+  String get privacyLanguageNote =>
+      'A política completa abaixo está em espanhol e inclui contacto e instruções de eliminação.';
+
+  @override
+  String get privacyLoadError =>
+      'Não foi possível carregar a política. Consulta o repositório público do Focum.';
 }

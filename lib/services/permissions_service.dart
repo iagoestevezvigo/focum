@@ -26,12 +26,12 @@ class PermissionsService {
       ),
       PermissionRequirement(
         type: FocumPermission.microphone,
-        granted: microphoneStatus.isGranted,
+        granted: microphoneStatus.isGranted && nativeState.microphoneConsent,
         requiredForActivation: false,
       ),
       PermissionRequirement(
         type: FocumPermission.usageAccess,
-        granted: nativeState.usageAccessGranted,
+        granted: nativeState.usageAccessGranted && nativeState.usageConsent,
         requiredForActivation: false,
       ),
       PermissionRequirement(
@@ -51,9 +51,11 @@ class PermissionsService {
         await _requestRuntimePermission(Permission.notification);
         return;
       case FocumPermission.microphone:
+        if (!await _nativeService.requestPrivacyConsent('microphone')) return;
         await _requestRuntimePermission(Permission.microphone);
         return;
       case FocumPermission.usageAccess:
+        if (!await _nativeService.requestPrivacyConsent('usage')) return;
         await _nativeService.openUsageAccessSettings();
         return;
       case FocumPermission.batteryOptimization:
@@ -63,6 +65,7 @@ class PermissionsService {
   }
 
   Future<bool> ensureMicrophonePermission() async {
+    if (!await _nativeService.requestPrivacyConsent('microphone')) return false;
     final status = await Permission.microphone.status;
     if (status.isGranted) {
       return true;

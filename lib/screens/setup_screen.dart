@@ -1,4 +1,5 @@
 import 'package:focum/l10n/l10n.dart';
+import 'package:focum/screens/privacy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:focum/design_system/focum_radius.dart';
 import 'package:focum/design_system/focum_spacing.dart';
@@ -36,12 +37,25 @@ class SetupScreen extends StatelessWidget {
                 ),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: showActiveState
-                      ? _ActiveState(controller: controller)
-                      : _SetupState(
-                          controller: controller,
-                          allPermissions: controller.permissions,
+                  child: Column(
+                    children: [
+                      showActiveState
+                          ? _ActiveState(controller: controller)
+                          : _SetupState(
+                              controller: controller,
+                              allPermissions: controller.permissions,
+                            ),
+                      const SizedBox(height: 16),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => const PrivacyScreen(),
+                          ),
                         ),
+                        child: Text(context.l10n.privacyTitle),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

@@ -477,7 +477,7 @@ class UnlockPromptOverlay(
 
     private fun isSpeechRecognitionAvailable(): Boolean {
         speechRecognitionAvailable?.let { return it }
-        return SpeechRecognizer.isRecognitionAvailable(context).also {
+        return OnDeviceVoice.available(context).also {
             speechRecognitionAvailable = it
         }
     }
@@ -488,7 +488,7 @@ class UnlockPromptOverlay(
         }
         speechRecognizer?.let { return it }
         return try {
-            SpeechRecognizer.createSpeechRecognizer(context).also {
+            OnDeviceVoice.create(context)?.also {
                 it.setRecognitionListener(buildRecognitionListener())
                 speechRecognizer = it
             }
@@ -505,7 +505,7 @@ class UnlockPromptOverlay(
         if (isRecognizerActive) {
             return
         }
-        if (!hasMicrophonePermission()) {
+        if (!PrivacyConsent.granted(context, "microphone") || !hasMicrophonePermission()) {
             Log.w(TAG, "Microphone permission missing for overlay prompt")
             switchToManualMode()
             return
@@ -646,7 +646,7 @@ class UnlockPromptOverlay(
                     return
                 }
 
-                resetVoiceIdleUi(context.getString(R.string.voice_retry_hint))
+                switchToManualMode()
             }
 
             override fun onResults(results: Bundle?) {

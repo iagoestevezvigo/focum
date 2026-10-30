@@ -36,7 +36,7 @@ object AppUsageMonitor {
     }
 
     fun currentForegroundApp(context: Context): ForegroundApp? {
-        if (!hasUsageAccess(context)) {
+        if (!PrivacyConsent.granted(context, "usage") || !hasUsageAccess(context)) {
             return null
         }
 

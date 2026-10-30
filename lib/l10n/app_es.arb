@@ -9,7 +9,7 @@
   "enablePermissions": "Activa los permisos necesarios y después enciéndelo.",
   "activateFocum": "Activar Focum",
   "deactivateFocum": "Desactivar Focum",
-  "privacyNotice": "Privacidad: guardamos fecha, hora, categoría y el texto final. El audio lo procesa el sistema de voz del dispositivo.",
+  "privacyNotice": "Privacidad: las intenciones permanecen en este dispositivo. La voz es solo local. El acceso al uso de apps es opcional. Lee la política a continuación.",
   "focumActive": "Focum activo",
   "activeDescription": "Focum te ayudará cada vez que desbloquees tu teléfono.",
   "allSet": "Todo listo",
@@ -24,7 +24,7 @@
   "overlayRequired": "Permite que Focum aparezca al desbloquear para poder activarlo.",
   "monitoringStarted": "Focum está activo. Te acompañará cada vez que desbloquees.",
   "microphoneRequired": "Activa el micrófono para usar la entrada por voz.",
-  "speechUnavailable": "El reconocimiento de voz no está disponible en este dispositivo.",
+  "speechUnavailable": "El dictado local no está disponible. Elige una categoría manualmente.",
   "chooseCategoryOrSpeak": "Elige una categoría o dilo con tu voz.",
   "intentionSaved": "Intención registrada.",
   "requiredPermission": "Necesario",
@@ -73,5 +73,14 @@
   "monitorChannelName": "Monitor de Focum",
   "monitorChannelDescription": "Mantiene activo el monitor de desbloqueo de Focum.",
   "monitorNotification": "Focum preguntará tu intención al desbloquear.",
-  "sayBeforeEntering": "Dilo en una frase corta antes de entrar."
+  "sayBeforeEntering": "Dilo en una frase corta antes de entrar.",
+  "privacyTitle": "Privacidad y datos",
+  "consentAccept": "Aceptar",
+  "consentDecline": "Ahora no",
+  "microphoneDisclosure": "Focum usa el micrófono solo durante el dictado. El audio se procesa en este dispositivo, nunca con un reconocedor en la nube. El texto final, la categoría y la hora se guardan localmente (hasta 300 entradas) y pueden aparecer en recordatorios. La voz necesita Android 12 o posterior y un modelo local instalado. Puedes elegir una categoría sin usar el micrófono. ¿Aceptas?",
+  "usageDisclosure": "Mientras Focum está activo, también en segundo plano, lee eventos recientes de uso para identificar la app en primer plano y compararla con tu intención en los recordatorios. Estos datos permanecen en el dispositivo: Focum no guarda el historial de apps ni lo envía a un servidor. Este acceso es opcional; puedes continuar sin él y revocarlo en los ajustes de Android. ¿Aceptas?",
+  "deleteData": "Borrar datos locales",
+  "deleteDataMessage": "Esto detiene Focum, borra intenciones, recordatorios, ajustes y consentimientos, y cierra la aplicación. No se puede deshacer.",
+  "privacyLanguageNote": "La política completa se muestra a continuación en español e incluye el contacto y las instrucciones de borrado.",
+  "privacyLoadError": "No se pudo cargar la política. Puedes consultarla en el repositorio público de Focum."
 }

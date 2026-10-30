@@ -40,7 +40,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get privacyNotice =>
-      'Datenschutz: Wir speichern Datum, Uhrzeit, Kategorie und den fertigen Text. Dein Audio wird vom Spracherkennungsdienst deines Geräts verarbeitet.';
+      'Datenschutz: Absichten bleiben auf diesem Gerät. Spracheingabe erfolgt nur lokal. App-Nutzungszugriff ist freiwillig. Lesen Sie die Richtlinie unten.';
 
   @override
   String get focumActive => 'Focum ist aktiv';
@@ -93,7 +93,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get speechUnavailable =>
-      'Die Spracherkennung ist auf diesem Gerät nicht verfügbar.';
+      'Lokale Spracherkennung ist nicht verfügbar. Wählen Sie eine Kategorie manuell.';
 
   @override
   String get chooseCategoryOrSpeak =>
@@ -261,4 +261,36 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get sayBeforeEntering =>
       'Nenne deinen Grund in einem kurzen Satz, bevor du weitermachst.';
+
+  @override
+  String get privacyTitle => 'Datenschutz und Daten';
+
+  @override
+  String get consentAccept => 'Zustimmen';
+
+  @override
+  String get consentDecline => 'Jetzt nicht';
+
+  @override
+  String get microphoneDisclosure =>
+      'Focum verwendet das Mikrofon nur beim Diktieren. Audio wird auf diesem Gerät verarbeitet, niemals in der Cloud. Der fertige Text, die Kategorie und die Uhrzeit werden lokal gespeichert (bis zu 300 Einträge) und können in Erinnerungen erscheinen. Spracheingabe erfordert Android 12 oder neuer und ein installiertes lokales Modell. Kategorien können ohne Mikrofon gewählt werden. Stimmen Sie zu?';
+
+  @override
+  String get usageDisclosure =>
+      'Während Focum aktiv ist, auch im Hintergrund, liest es aktuelle Nutzungsereignisse, um die App im Vordergrund mit Ihrer Absicht für Erinnerungen abzugleichen. Diese Daten bleiben auf dem Gerät: Focum speichert keinen App-Verlauf und sendet ihn nicht an einen Server. Der Zugriff ist freiwillig und kann in Android widerrufen werden. Stimmen Sie zu?';
+
+  @override
+  String get deleteData => 'Lokale Daten löschen';
+
+  @override
+  String get deleteDataMessage =>
+      'Dies beendet Focum, löscht Absichten, Erinnerungen, Einstellungen und Einwilligungen und schließt die App. Dies kann nicht rückgängig gemacht werden.';
+
+  @override
+  String get privacyLanguageNote =>
+      'Die vollständige Richtlinie unten ist auf Spanisch und enthält Kontakt und Löschanleitung.';
+
+  @override
+  String get privacyLoadError =>
+      'Die Richtlinie konnte nicht geladen werden. Sie finden sie im öffentlichen Focum-Repository.';
 }

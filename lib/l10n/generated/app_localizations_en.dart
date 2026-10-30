@@ -40,7 +40,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacyNotice =>
-      'Privacy: we store the date, time, category and final text. Audio is processed by your device’s speech recognition service.';
+      'Privacy: intentions stay on this device. Voice is on-device only. App-use access is optional. Read the privacy policy below.';
 
   @override
   String get focumActive => 'Focum is active';
@@ -91,7 +91,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get speechUnavailable =>
-      'Speech recognition is not available on this device.';
+      'On-device speech is unavailable. Choose a category manually.';
 
   @override
   String get chooseCategoryOrSpeak => 'Choose a category or say your reason.';
@@ -257,4 +257,36 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get sayBeforeEntering =>
       'Say it in a short sentence before continuing.';
+
+  @override
+  String get privacyTitle => 'Privacy and data';
+
+  @override
+  String get consentAccept => 'Allow';
+
+  @override
+  String get consentDecline => 'Not now';
+
+  @override
+  String get microphoneDisclosure =>
+      'Focum uses the microphone only during voice input. Audio is processed on this device, never by a cloud recognizer. The final text, category and time are saved locally (up to 300 entries) and may appear in reminders. Voice needs Android 12 or later and an installed on-device model. You can choose a category without using the microphone. Do you agree?';
+
+  @override
+  String get usageDisclosure =>
+      'While Focum is active, including in the background, it reads recent app-use events to identify the app in the foreground and compare it with your intention for reminders. This stays on the device: app-use history is not saved by Focum or sent to a server. This access is optional; you can continue without it and revoke it in Android settings. Do you agree?';
+
+  @override
+  String get deleteData => 'Delete local data';
+
+  @override
+  String get deleteDataMessage =>
+      'This stops Focum, deletes intentions, reminders, settings and consent choices, and closes the app. This cannot be undone.';
+
+  @override
+  String get privacyLanguageNote =>
+      'The full privacy policy below is in Spanish. Contact and data deletion instructions are included.';
+
+  @override
+  String get privacyLoadError =>
+      'Could not load the privacy policy. You can find it in the public Focum repository.';
 }

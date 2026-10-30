@@ -12,6 +12,8 @@
     <string name="category_work">Trabajo</string>
     <string name="choose_before_entering">Elige el motivo principal antes de entrar.</string>
     <string name="choose_main_reason">Elige el motivo principal.</string>
+    <string name="consent_accept">Aceptar</string>
+    <string name="consent_decline">Ahora no</string>
     <string name="five_minutes_title">Llevas 5 minutos.</string>
     <string name="focum_active">Focum activo</string>
     <string name="focus_mismatch_message">Dijiste que ibas a usar el móvil para %1$s, pero ahora estás en %2$s.</string>
@@ -20,9 +22,11 @@
     <string name="keep_going">Sigo con ello</string>
     <string name="listening">Te escucho</string>
     <string name="manual_mode">Manual</string>
+    <string name="microphone_disclosure">Focum usa el micrófono solo durante el dictado. El audio se procesa en este dispositivo, nunca con un reconocedor en la nube. El texto final, la categoría y la hora se guardan localmente (hasta 300 entradas) y pueden aparecer en recordatorios. La voz necesita Android 12 o posterior y un modelo local instalado. Puedes elegir una categoría sin usar el micrófono. ¿Aceptas?</string>
     <string name="monitor_channel_description">Mantiene activo el monitor de desbloqueo de Focum.</string>
     <string name="monitor_channel_name">Monitor de Focum</string>
     <string name="monitor_notification">Focum preguntará tu intención al desbloquear.</string>
+    <string name="privacy_title">Privacidad y datos</string>
     <string name="reminder_app">Llevas 5 minutos en %1$s para %2$s.</string>
     <string name="reminder_intention">Llevas 5 minutos con el móvil. Dijiste que era para %1$s.</string>
     <string name="reminder_phone">Llevas 5 minutos con el móvil para %1$s.</string>
@@ -33,6 +37,7 @@
     <string name="say_before_entering">Dilo en una frase corta antes de entrar.</string>
     <string name="status_channel_description">Recordatorios diarios para reabrir Focum si Android lo detiene.</string>
     <string name="status_channel_name">Estado de Focum</string>
+    <string name="usage_disclosure">Mientras Focum está activo, también en segundo plano, lee eventos recientes de uso para identificar la app en primer plano y compararla con tu intención en los recordatorios. Estos datos permanecen en el dispositivo: Focum no guarda el historial de apps ni lo envía a un servidor. Este acceso es opcional; puedes continuar sin él y revocarlo en los ajustes de Android. ¿Aceptas?</string>
     <string name="voice_idle_hint">Pulsa y di tu motivo</string>
     <string name="voice_mode">Voz</string>
     <string name="voice_retry_hint">Repítelo, no te he entendido</string>

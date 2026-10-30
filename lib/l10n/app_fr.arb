@@ -9,7 +9,7 @@
   "enablePermissions": "Accordez les autorisations nécessaires, puis activez Focum.",
   "activateFocum": "Activer Focum",
   "deactivateFocum": "Désactiver Focum",
-  "privacyNotice": "Confidentialité : nous enregistrons la date, l’heure, la catégorie et le texte final. L’audio est traité par le service de reconnaissance vocale de votre appareil.",
+  "privacyNotice": "Confidentialité : les intentions restent sur cet appareil. La voix est uniquement locale. L’accès à l’utilisation des applications est facultatif. Consultez la politique ci-dessous.",
   "focumActive": "Focum est actif",
   "activeDescription": "Focum vous accompagnera à chaque déverrouillage de votre téléphone.",
   "allSet": "Tout est prêt",
@@ -24,7 +24,7 @@
   "overlayRequired": "Autorisez Focum à s’afficher au déverrouillage avant de l’activer.",
   "monitoringStarted": "Focum est actif. Il vous accompagnera à chaque déverrouillage.",
   "microphoneRequired": "Activez le microphone pour utiliser la saisie vocale.",
-  "speechUnavailable": "La reconnaissance vocale n’est pas disponible sur cet appareil.",
+  "speechUnavailable": "La dictée locale est indisponible. Choisissez une catégorie manuellement.",
   "chooseCategoryOrSpeak": "Choisissez une catégorie ou dites votre raison.",
   "intentionSaved": "Intention enregistrée.",
   "requiredPermission": "Nécessaire",
@@ -73,5 +73,14 @@
   "monitorChannelName": "Suivi Focum",
   "monitorChannelDescription": "Maintient le suivi du déverrouillage de Focum actif.",
   "monitorNotification": "Focum vous demandera votre intention au déverrouillage.",
-  "sayBeforeEntering": "Dites-le en une courte phrase avant de continuer."
+  "sayBeforeEntering": "Dites-le en une courte phrase avant de continuer.",
+  "privacyTitle": "Confidentialité et données",
+  "consentAccept": "Accepter",
+  "consentDecline": "Pas maintenant",
+  "microphoneDisclosure": "Focum utilise le microphone uniquement pendant la dictée. Le son est traité sur cet appareil, jamais dans le cloud. Le texte final, la catégorie et l’heure sont conservés localement (300 entrées au maximum) et peuvent apparaître dans les rappels. La voix nécessite Android 12 ou ultérieur et un modèle local installé. Vous pouvez choisir une catégorie sans microphone. Acceptez-vous ?",
+  "usageDisclosure": "Lorsque Focum est actif, y compris en arrière-plan, il consulte les événements récents d’utilisation pour identifier l’application au premier plan et la comparer à votre intention pour les rappels. Ces données restent sur l’appareil : Focum ne conserve pas l’historique des applications et ne le transmet à aucun serveur. Cet accès est facultatif et révocable dans les paramètres Android. Acceptez-vous ?",
+  "deleteData": "Effacer les données locales",
+  "deleteDataMessage": "Cette action arrête Focum, efface les intentions, rappels, réglages et consentements, puis ferme l’application. Elle est irréversible.",
+  "privacyLanguageNote": "La politique complète ci-dessous est en espagnol et contient les coordonnées et les instructions de suppression.",
+  "privacyLoadError": "Impossible de charger la politique. Consultez le dépôt public de Focum."
 }
