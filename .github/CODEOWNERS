@@ -1,0 +1,3 @@
+# Approval owners must be authorized repository administrators.
+# Add future admins on this same line after granting repository access.
+* @iagoestevezvigo
