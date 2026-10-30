@@ -1,12 +1,16 @@
+import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:speech_to_text/speech_recognition_error.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
 
+/// The native bridge only creates Android's on-device recognizer (API 31+).
+/// Missing models or unsupported devices fail closed to manual categories.
 class VoiceInputService {
-  final SpeechToText _speech = SpeechToText();
-
-  bool get isListening => _speech.isListening;
+  static const _methods = MethodChannel('focum/speech');
+  static const _events = EventChannel('focum/speech_events');
+  StreamSubscription<dynamic>? _subscription;
+  Timer? _timeout;
+  bool _isListening = false;
+  bool get isListening => _isListening;
 
   Future<bool> startListening({
     required ValueChanged<String> onText,
@@ -15,77 +19,66 @@ class VoiceInputService {
     required ValueChanged<double> onSoundLevelChanged,
     required ValueChanged<String> onError,
   }) async {
-    final available = await _speech.initialize(
-      onStatus: (status) => _handleStatus(status, onListeningChanged),
-      onError: (error) => _handleError(error, onListeningChanged, onError),
-    );
-
-    if (!available) {
-      return false;
+    await stop();
+    void finish() {
+      _timeout?.cancel();
+      _isListening = false;
+      onListeningChanged(false);
     }
 
-    final installedLocales = await _speech.locales();
-    final localeId = resolveSpeechLocale(
-      WidgetsBinding.instance.platformDispatcher.locales,
-      installedLocales.map((locale) => locale.localeId).toList(),
+    _subscription = _events.receiveBroadcastStream().listen(
+      (dynamic raw) {
+        final event = Map<String, dynamic>.from(raw as Map);
+        if (event['level'] case final num level) {
+          onSoundLevelChanged(level.toDouble());
+        }
+        if (event['text'] case final String text) {
+          onText(text);
+          if (event['final'] == true) {
+            onFinalText(text);
+            finish();
+          }
+        }
+        if (event['error'] case final String error) {
+          finish();
+          onError(error);
+        }
+      },
+      onError: (Object error) {
+        finish();
+        onError('speech_unavailable');
+      },
     );
-
-    await _speech.listen(
-      onResult: (result) =>
-          _handleResult(result, onText, onFinalText, onListeningChanged),
-      onSoundLevelChange: onSoundLevelChanged,
-      listenOptions: SpeechListenOptions(
-        listenFor: const Duration(seconds: 45),
-        pauseFor: const Duration(seconds: 4),
-        localeId: localeId,
-        listenMode: ListenMode.dictation,
-        partialResults: true,
-        cancelOnError: true,
-      ),
-    );
-
+    try {
+      _isListening = await _methods.invokeMethod<bool>('start') ?? false;
+    } on PlatformException {
+      _isListening = false;
+    } on MissingPluginException {
+      _isListening = false;
+    }
+    if (!_isListening) {
+      await stop();
+      return false;
+    }
     onListeningChanged(true);
+    _timeout = Timer(const Duration(seconds: 45), () {
+      unawaited(stop());
+      finish();
+    });
     return true;
   }
 
   Future<void> stop() async {
-    if (_speech.isListening) {
-      await _speech.stop();
+    _timeout?.cancel();
+    _timeout = null;
+    _isListening = false;
+    await _subscription?.cancel();
+    _subscription = null;
+    try {
+      await _methods.invokeMethod<void>('stop');
+    } on MissingPluginException {
+      // Unsupported platforms have no voice bridge and remain in manual mode.
     }
-  }
-
-  void _handleResult(
-    SpeechRecognitionResult result,
-    ValueChanged<String> onText,
-    ValueChanged<String> onFinalText,
-    ValueChanged<bool> onListeningChanged,
-  ) {
-    onText(result.recognizedWords);
-    if (result.finalResult) {
-      onFinalText(result.recognizedWords);
-      onListeningChanged(false);
-    }
-  }
-
-  void _handleStatus(String status, ValueChanged<bool> onListeningChanged) {
-    final normalized = status.toLowerCase();
-    if (normalized.contains('listening')) {
-      onListeningChanged(true);
-      return;
-    }
-
-    if (normalized.contains('done') || normalized.contains('notlistening')) {
-      onListeningChanged(false);
-    }
-  }
-
-  void _handleError(
-    SpeechRecognitionError error,
-    ValueChanged<bool> onListeningChanged,
-    ValueChanged<String> onError,
-  ) {
-    onListeningChanged(false);
-    onError(error.errorMsg);
   }
 }
 

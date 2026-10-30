@@ -85,6 +85,7 @@ class IntentionReminderReceiver : BroadcastReceiver() {
                             .bigText(reminderText),
                     )
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
                     .setAutoCancel(true)
                     .setContentIntent(contentIntent)
                     .build()

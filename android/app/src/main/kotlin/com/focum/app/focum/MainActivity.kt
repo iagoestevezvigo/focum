@@ -19,6 +19,12 @@ import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 
 open class MainActivity : FlutterActivity() {
+    private var onDeviceVoice: OnDeviceVoice? = null
+
+    override fun onDestroy() {
+        onDeviceVoice?.dispose()
+        super.onDestroy()
+    }
     companion object {
         const val ACTION_SHOW_UNLOCK_PROMPT = "com.focum.app.focum.action.SHOW_UNLOCK_PROMPT"
         private const val METHOD_CHANNEL = "focum/native"
@@ -80,10 +86,17 @@ open class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        onDeviceVoice = OnDeviceVoice(this, flutterEngine)
 
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, METHOD_CHANNEL)
             .setMethodCallHandler { call, result ->
                 when (call.method) {
+                    "requestPrivacyConsent" -> PrivacyConsent.request(this, call.argument<String>("kind").orEmpty(), result)
+                    "clearLocalData" -> {
+                        result.success(null)
+                        UnlockMonitorService.stop(this)
+                        (getSystemService(ACTIVITY_SERVICE) as android.app.ActivityManager).clearApplicationUserData()
+                    }
                     "getInitialState" -> result.success(buildStatePayload())
                     "startMonitoring" -> {
                         UnlockMonitorService.start(this)
@@ -173,6 +186,8 @@ open class MainActivity : FlutterActivity() {
 
     private fun buildStatePayload(): Map<String, Any> =
         mapOf(
+            "microphoneConsent" to PrivacyConsent.granted(this, "microphone"),
+            "usageConsent" to PrivacyConsent.granted(this, "usage"),
             "overlayGranted" to hasOverlayPermission(),
             "usageAccessGranted" to AppUsageMonitor.hasUsageAccess(this),
             "batteryOptimizationIgnored" to isIgnoringBatteryOptimizations(),

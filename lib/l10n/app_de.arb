@@ -9,7 +9,7 @@
   "enablePermissions": "Erteile die nötigen Berechtigungen und aktiviere dann Focum.",
   "activateFocum": "Focum aktivieren",
   "deactivateFocum": "Focum deaktivieren",
-  "privacyNotice": "Datenschutz: Wir speichern Datum, Uhrzeit, Kategorie und den fertigen Text. Dein Audio wird vom Spracherkennungsdienst deines Geräts verarbeitet.",
+  "privacyNotice": "Datenschutz: Absichten bleiben auf diesem Gerät. Spracheingabe erfolgt nur lokal. App-Nutzungszugriff ist freiwillig. Lesen Sie die Richtlinie unten.",
   "focumActive": "Focum ist aktiv",
   "activeDescription": "Focum hilft dir jedes Mal, wenn du dein Handy entsperrst.",
   "allSet": "Alles bereit",
@@ -24,7 +24,7 @@
   "overlayRequired": "Erlaube Focum, beim Entsperren zu erscheinen, bevor du es aktivierst.",
   "monitoringStarted": "Focum ist aktiv und begleitet dich bei jedem Entsperren.",
   "microphoneRequired": "Aktiviere das Mikrofon für die Spracheingabe.",
-  "speechUnavailable": "Die Spracherkennung ist auf diesem Gerät nicht verfügbar.",
+  "speechUnavailable": "Lokale Spracherkennung ist nicht verfügbar. Wählen Sie eine Kategorie manuell.",
   "chooseCategoryOrSpeak": "Wähle eine Kategorie oder nenne deinen Grund.",
   "intentionSaved": "Absicht gespeichert.",
   "requiredPermission": "Erforderlich",
@@ -73,5 +73,14 @@
   "monitorChannelName": "Focum-Überwachung",
   "monitorChannelDescription": "Hält die Entsperrüberwachung von Focum aktiv.",
   "monitorNotification": "Focum fragt dich beim Entsperren nach deiner Absicht.",
-  "sayBeforeEntering": "Nenne deinen Grund in einem kurzen Satz, bevor du weitermachst."
+  "sayBeforeEntering": "Nenne deinen Grund in einem kurzen Satz, bevor du weitermachst.",
+  "privacyTitle": "Datenschutz und Daten",
+  "consentAccept": "Zustimmen",
+  "consentDecline": "Jetzt nicht",
+  "microphoneDisclosure": "Focum verwendet das Mikrofon nur beim Diktieren. Audio wird auf diesem Gerät verarbeitet, niemals in der Cloud. Der fertige Text, die Kategorie und die Uhrzeit werden lokal gespeichert (bis zu 300 Einträge) und können in Erinnerungen erscheinen. Spracheingabe erfordert Android 12 oder neuer und ein installiertes lokales Modell. Kategorien können ohne Mikrofon gewählt werden. Stimmen Sie zu?",
+  "usageDisclosure": "Während Focum aktiv ist, auch im Hintergrund, liest es aktuelle Nutzungsereignisse, um die App im Vordergrund mit Ihrer Absicht für Erinnerungen abzugleichen. Diese Daten bleiben auf dem Gerät: Focum speichert keinen App-Verlauf und sendet ihn nicht an einen Server. Der Zugriff ist freiwillig und kann in Android widerrufen werden. Stimmen Sie zu?",
+  "deleteData": "Lokale Daten löschen",
+  "deleteDataMessage": "Dies beendet Focum, löscht Absichten, Erinnerungen, Einstellungen und Einwilligungen und schließt die App. Dies kann nicht rückgängig gemacht werden.",
+  "privacyLanguageNote": "Die vollständige Richtlinie unten ist auf Spanisch und enthält Kontakt und Löschanleitung.",
+  "privacyLoadError": "Die Richtlinie konnte nicht geladen werden. Sie finden sie im öffentlichen Focum-Repository."
 }

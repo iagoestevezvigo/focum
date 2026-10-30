@@ -12,6 +12,8 @@
     <string name="category_work">Arbeit</string>
     <string name="choose_before_entering">Wähle deinen Hauptgrund, bevor du weitermachst.</string>
     <string name="choose_main_reason">Wähle deinen Hauptgrund.</string>
+    <string name="consent_accept">Zustimmen</string>
+    <string name="consent_decline">Jetzt nicht</string>
     <string name="five_minutes_title">5 Minuten sind vergangen.</string>
     <string name="focum_active">Focum ist aktiv</string>
     <string name="focus_mismatch_message">Du wolltest dein Handy für %1$s nutzen, bist aber jetzt in %2$s.</string>
@@ -20,9 +22,11 @@
     <string name="keep_going">Ich bin noch dabei</string>
     <string name="listening">Ich höre zu</string>
     <string name="manual_mode">Manuell</string>
+    <string name="microphone_disclosure">Focum verwendet das Mikrofon nur beim Diktieren. Audio wird auf diesem Gerät verarbeitet, niemals in der Cloud. Der fertige Text, die Kategorie und die Uhrzeit werden lokal gespeichert (bis zu 300 Einträge) und können in Erinnerungen erscheinen. Spracheingabe erfordert Android 12 oder neuer und ein installiertes lokales Modell. Kategorien können ohne Mikrofon gewählt werden. Stimmen Sie zu?</string>
     <string name="monitor_channel_description">Hält die Entsperrüberwachung von Focum aktiv.</string>
     <string name="monitor_channel_name">Focum-Überwachung</string>
     <string name="monitor_notification">Focum fragt dich beim Entsperren nach deiner Absicht.</string>
+    <string name="privacy_title">Datenschutz und Daten</string>
     <string name="reminder_app">Du bist seit 5 Minuten in %1$s für %2$s.</string>
     <string name="reminder_intention">Du nutzt dein Handy seit 5 Minuten. Du wolltest es für %1$s nutzen.</string>
     <string name="reminder_phone">Du nutzt dein Handy seit 5 Minuten für %1$s.</string>
@@ -33,6 +37,7 @@
     <string name="say_before_entering">Nenne deinen Grund in einem kurzen Satz, bevor du weitermachst.</string>
     <string name="status_channel_description">Tägliche Erinnerungen, Focum erneut zu öffnen, wenn Android es beendet.</string>
     <string name="status_channel_name">Focum-Status</string>
+    <string name="usage_disclosure">Während Focum aktiv ist, auch im Hintergrund, liest es aktuelle Nutzungsereignisse, um die App im Vordergrund mit Ihrer Absicht für Erinnerungen abzugleichen. Diese Daten bleiben auf dem Gerät: Focum speichert keinen App-Verlauf und sendet ihn nicht an einen Server. Der Zugriff ist freiwillig und kann in Android widerrufen werden. Stimmen Sie zu?</string>
     <string name="voice_idle_hint">Tippe und nenne deinen Grund</string>
     <string name="voice_mode">Sprache</string>
     <string name="voice_retry_hint">Bitte wiederhole das, ich habe dich nicht verstanden</string>

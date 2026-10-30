@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:focum/design_system/focum_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FocumTypography {
   static TextTheme textTheme(Brightness brightness) {
     final isDark = brightness == Brightness.dark;
-    final base = GoogleFonts.interTextTheme();
-    final primary =
-        isDark ? FocumColors.textPrimaryDark : FocumColors.textPrimary;
-    final secondary =
-        isDark ? FocumColors.textSecondaryDark : FocumColors.textSecondary;
-    final tertiary =
-        isDark ? FocumColors.textTertiaryDark : FocumColors.textTertiary;
+    // Use Android's system typeface; no font downloads or network requests.
+    final base = ThemeData(brightness: brightness).textTheme;
+    final primary = isDark
+        ? FocumColors.textPrimaryDark
+        : FocumColors.textPrimary;
+    final secondary = isDark
+        ? FocumColors.textSecondaryDark
+        : FocumColors.textSecondary;
+    final tertiary = isDark
+        ? FocumColors.textTertiaryDark
+        : FocumColors.textTertiary;
 
     return base.copyWith(
       displayLarge: base.displayLarge?.copyWith(

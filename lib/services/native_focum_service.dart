@@ -2,6 +2,8 @@ import 'package:flutter/services.dart';
 
 class NativeAppState {
   const NativeAppState({
+    this.microphoneConsent = false,
+    this.usageConsent = false,
     required this.overlayGranted,
     required this.usageAccessGranted,
     required this.batteryOptimizationIgnored,
@@ -11,6 +13,8 @@ class NativeAppState {
   });
 
   final bool overlayGranted;
+  final bool microphoneConsent;
+  final bool usageConsent;
   final bool usageAccessGranted;
   final bool batteryOptimizationIgnored;
   final bool monitoringEnabled;
@@ -19,6 +23,8 @@ class NativeAppState {
 
   factory NativeAppState.fromMap(Map<dynamic, dynamic> data) {
     return NativeAppState(
+      microphoneConsent: data['microphoneConsent'] as bool? ?? false,
+      usageConsent: data['usageConsent'] as bool? ?? false,
       overlayGranted: data['overlayGranted'] as bool? ?? false,
       usageAccessGranted: data['usageAccessGranted'] as bool? ?? false,
       batteryOptimizationIgnored:
@@ -69,6 +75,15 @@ class NativeFocumService {
   Future<void> openUsageAccessSettings() {
     return _methodChannel.invokeMethod<void>('openUsageAccessSettings');
   }
+
+  Future<bool> requestPrivacyConsent(String kind) async =>
+      await _methodChannel.invokeMethod<bool>('requestPrivacyConsent', {
+        'kind': kind,
+      }) ??
+      false;
+
+  Future<void> clearLocalData() =>
+      _methodChannel.invokeMethod<void>('clearLocalData');
 
   Future<void> activateCurrentIntention({
     required String categoryId,

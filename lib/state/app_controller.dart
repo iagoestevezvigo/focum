@@ -329,6 +329,9 @@ class AppController extends ChangeNotifier {
         }
       },
       onError: (message) {
+        _voiceRestartTimer?.cancel();
+        isVoiceMode = false;
+        _note = (l10n) => l10n.speechUnavailable;
         _repeatVoiceHint = true;
         isListening = false;
         isSpeechDetected = false;
@@ -409,12 +412,10 @@ class AppController extends ChangeNotifier {
   }) {
     promptVisible = true;
     promptSource = source;
-    _resetPromptState(voiceMode: true);
+    // Opening the unlock prompt must not open the microphone automatically.
+    _resetPromptState();
     if (emitUpdate) {
       notifyListeners();
-    }
-    if (_isAppResumed) {
-      unawaited(_startVoiceListening());
     }
   }
 

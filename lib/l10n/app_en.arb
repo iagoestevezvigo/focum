@@ -9,7 +9,7 @@
   "enablePermissions": "Allow the required permissions, then activate Focum.",
   "activateFocum": "Activate Focum",
   "deactivateFocum": "Deactivate Focum",
-  "privacyNotice": "Privacy: we store the date, time, category and final text. Audio is processed by your device’s speech recognition service.",
+  "privacyNotice": "Privacy: intentions stay on this device. Voice is on-device only. App-use access is optional. Read the privacy policy below.",
   "focumActive": "Focum is active",
   "activeDescription": "Focum will help you each time you unlock your phone.",
   "allSet": "All set",
@@ -24,7 +24,7 @@
   "overlayRequired": "Allow Focum to appear when you unlock your phone before activating it.",
   "monitoringStarted": "Focum is active. It will be with you every time you unlock.",
   "microphoneRequired": "Enable the microphone to use voice input.",
-  "speechUnavailable": "Speech recognition is not available on this device.",
+  "speechUnavailable": "On-device speech is unavailable. Choose a category manually.",
   "chooseCategoryOrSpeak": "Choose a category or say your reason.",
   "intentionSaved": "Intention saved.",
   "requiredPermission": "Required",
@@ -107,5 +107,14 @@
   "monitorChannelName": "Focum monitor",
   "monitorChannelDescription": "Keeps Focum’s unlock monitor active.",
   "monitorNotification": "Focum will ask your intention when you unlock.",
-  "sayBeforeEntering": "Say it in a short sentence before continuing."
+  "sayBeforeEntering": "Say it in a short sentence before continuing.",
+  "privacyTitle": "Privacy and data",
+  "consentAccept": "Allow",
+  "consentDecline": "Not now",
+  "microphoneDisclosure": "Focum uses the microphone only during voice input. Audio is processed on this device, never by a cloud recognizer. The final text, category and time are saved locally (up to 300 entries) and may appear in reminders. Voice needs Android 12 or later and an installed on-device model. You can choose a category without using the microphone. Do you agree?",
+  "usageDisclosure": "While Focum is active, including in the background, it reads recent app-use events to identify the app in the foreground and compare it with your intention for reminders. This stays on the device: app-use history is not saved by Focum or sent to a server. This access is optional; you can continue without it and revoke it in Android settings. Do you agree?",
+  "deleteData": "Delete local data",
+  "deleteDataMessage": "This stops Focum, deletes intentions, reminders, settings and consent choices, and closes the app. This cannot be undone.",
+  "privacyLanguageNote": "The full privacy policy below is in Spanish. Contact and data deletion instructions are included.",
+  "privacyLoadError": "Could not load the privacy policy. You can find it in the public Focum repository."
 }
